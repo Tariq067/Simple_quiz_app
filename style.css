@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.list {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #4cae4c;
+    color: black;
+    font: bold;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   }
+.list p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    flex-grow: 1;
+}
+.list button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+    align-items: end;    
+}
+li:last-child {
+    border-bottom: none;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 30px auto;
+    padding: 10px;
+}
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    margin-top: 100px auto 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    text-align: center;
+}
+.todo-app h2 img {
+    width: 50px;
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+#checkbox
+{  
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+   height: 30px;
+   cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
