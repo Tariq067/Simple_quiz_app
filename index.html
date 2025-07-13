@@ -2,92 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Simple Quiz App</title>
     <link rel="stylesheet" href="style.css">
-    <title>My TO-DO List</title>
 </head>
 <body>
-    <div class="container">
-        <div class="todo-app">
-        <h2>My TO-DO List <img src='Images/list_14991727.png' alt=""></h2>
-    <input type="text" id="taskInput" placeholder="Add a new task">
-    <button id="addTaskButton">Add Task</button>
-    <ul id="taskList"></ul>
-        </div>       
+    <div class="quiz-container">
+        <h1>Simple Quiz App</h1>
+        <div class="quiz-content">
+            <p id="question">Question will appear here</p>
+            <div class="options">
+                <button class="option" onclick="selectOption(this)">Option 1</button>
+                <button class="option" onclick="selectOption(this)">Option 2</button>
+                <button class="option" onclick="selectOption(this)">Option 3</button>
+                <button class="option" onclick="selectOption(this)">Option 4</button>
+            </div>
+            <button id="next-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
     </div>
-    <script>
-       document.addEventListener('DOMContentLoaded', () => {
-    const taskInput = document.getElementById('taskInput');
-    const addTaskButton = document.getElementById('addTaskButton');
-    const taskList = document.getElementById('taskList');
-
-    // Load tasks from local storage
-    const loadTasks = () => {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.forEach(taskText => addTaskToDOM(taskText));
-    };
-
-    // Add task to DOM
-    const addTaskToDOM = (taskText) => {
-        const listItem = document.createElement('li');
-        listItem.className = 'list';
-        listItem.innerHTML = `<input type="checkbox" id="checkbox"/><p>${taskText}</p> <button class="deleteButton">&times</button>`;
-        
-        listItem.querySelector('.deleteButton').addEventListener('click', () => {
-            taskList.removeChild(listItem);
-            updateLocalStorage();
-        });
-
-        const paragraph = listItem.querySelector('p');
-        paragraph.addEventListener('click', () => {
-            const newTaskText = prompt('Edit task:', paragraph.textContent);
-            if (newTaskText !== null) {
-                paragraph.textContent = newTaskText;
-                updateLocalStorage();
-            }
-        });
-
-        const checkbox = listItem.querySelector('#checkbox');
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                paragraph.style.textDecoration = 'line-through';
-                paragraph.style.textDecorationColor = 'white'
-                checkbox.style.backgroundColor = '#5cb85c';
-            } else {
-                paragraph.style.textDecoration = 'none';
-                checkbox.style.backgroundColor = '#fff';
-            }
-        });
-
-        taskList.appendChild(listItem);
-    };
-
-    // Update local storage
-    const updateLocalStorage = () => {
-        const tasks = Array.from(taskList.querySelectorAll('p')).map(p => p.textContent);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    };
-
-    addTaskButton.addEventListener('click', () => {
-        const taskText = taskInput.value.trim();
-        if (taskText !== '') {
-            const tasks = taskList.querySelectorAll('p');
-            for (let task of tasks) {
-                if (task.textContent === taskText) {
-                    alert('This task already exists!');
-                    return;
-                }
-            }
-            addTaskToDOM(taskText);
-            updateLocalStorage();
-            taskInput.value = '';
-        } else {
-            alert('Please enter a task.');
-        }
-    });
-
-    loadTasks();
-});
-</script>
+    <script src="scripts.js"></script>
 </body>
 </html>

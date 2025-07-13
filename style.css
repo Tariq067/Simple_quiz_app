@@ -1,121 +1,88 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+body
+{
+    background-color: #001e4d;
     color: #333;
 }
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.quiz-container
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(135deg, #001e4d, #004080); 
+    padding-top: 40px;   
 }
-
-input[type="text"] {
-    width: 70%;
+.quiz-content
+{
+    width: 400px;
+    background-color: #fff;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 20px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #4cae4c;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    justify-content: space-between;
+    gap: 15px;
+    color: #333;
+    justify-content: center;
 }
-
-.list {
-    list-style: none;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    background-color: #4cae4c;
-    color: black;
-    font: bold;
-    border-radius: 10px;
-    width: 100%;
-    margin: 0px auto;
+.quiz-container h1
+{
+    text-align: center;
+    color: white;    
+    margin-bottom: 20px;
+}
+.options
+{
     display: flex;
-   justify-content: space-between;
-   align-items: center;
-   }
-.list p {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px;
+    gap: 15px;
+    margin: auto;
+    background-color: #f0f0f0;
     border-radius: 5px;
     cursor: pointer;
-    text-align: left;
-    flex-grow: 1;
-}
-.list button {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 5px 10px;
-    align-items: end;    
-}
-li:last-child {
-    border-bottom: none;
-}
-.container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: linear-gradient(135deg, #6a11cb, #2575fc);
-    margin: 30px auto;
-    padding: 10px;
-}
-.todo-app {
-    width: 100%;
-    max-width: 540px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-    margin-top: 100px auto 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
     text-align: center;
+    transition: background-color 0.3s ease;
+    padding: 10px 0px 10px 0px;
 }
-.todo-app h2 img {
-    width: 50px;
-    height: 30px;
-    vertical-align: middle;
-    margin-left: 10px;
+#next-btn
+{
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;    
 }
-#checkbox
-{  
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-   height: 30px;
-   cursor: pointer;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    background-color: #fff;
+#question
+{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+.option
+{
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Add to your style.css */
+.option.correct {
+    background-color: #4caf50 !important; /* Green */
+    color: #fff;
+}
+.option.wrong {
+    background-color: #f44336 !important; /* Red */
+    color: #fff;
 }
